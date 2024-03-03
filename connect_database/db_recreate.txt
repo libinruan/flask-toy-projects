@@ -1,0 +1,26 @@
+from app import db, Student
+
+john = Student(
+    firstname='John', 
+    lastname='Doe',
+    email='jd@example.com', 
+    age=23,
+    bio='Biology student')
+sammy = Student(
+    firstname='Sammy',
+    lastname='Shark',
+    email='sammyshark@example.com',
+    age=20,
+    bio='Marine biology student')
+carl = Student(
+    firstname='Carl',
+    lastname='White',
+    email='carlwhite@example.com',
+    age=22,
+    bio='Marine geology student')
+
+db.session.add(john)
+db.session.add(sammy)
+db.session.add(carl)
+db.session.commit()
+print(Student.query.all())
